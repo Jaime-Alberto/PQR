@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportePQR" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="85f8ac73-a3ea-411a-a4f0-5691b52c11a9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM PQR]]>
+	</queryString>
+	<field name="asunto_pqr" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_creacion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_limite" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo_pqr" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="usuario" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="usuario_1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{usuario}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="157" y="18" width="246" height="47" uuid="be7978a1-d0ba-42cc-bf8c-da49224e26a6"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Reporte de las PQRs]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="459" y="45" width="100" height="20" uuid="1e7734e2-40c4-412e-a900-0a7e16fcabd4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="30" height="20" uuid="3dc14dca-7c31-41ec-9700-8b404aeaf5af"/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="2" width="63" height="20" uuid="a70bec07-1a2e-4468-8f32-b0b3772de3b0"/>
+				<text><![CDATA[Usuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="2" width="71" height="20" uuid="7ccda409-9da4-48c7-aff8-c035bb0e8282"/>
+				<text><![CDATA[Tipo pqr]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="2" width="75" height="20" uuid="856d6417-ae94-4758-8a46-a55137681b24"/>
+				<text><![CDATA[Asunto pqr]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="2" width="98" height="20" uuid="fe91fe3d-9c83-4b05-82c6-2f94e1d713ea"/>
+				<text><![CDATA[Fecha creacion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="303" y="2" width="65" height="20" uuid="e50b65d0-154e-4ad5-b5f9-81fd9df8d800"/>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="489" y="2" width="83" height="20" uuid="600b8f7e-c0e0-4527-86f9-cf1ece41ae0d"/>
+				<text><![CDATA[Fecha limite]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="16" width="30" height="20" uuid="e9d2fc9b-efc7-4d91-bfe2-cf5354960c74"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="47" y="16" width="63" height="20" uuid="16ecfea1-9f73-48b1-83f8-732d0b1d78f6"/>
+				<textFieldExpression><![CDATA[$F{usuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="16" width="71" height="20" uuid="40c6a1e2-0387-4339-a86a-defee9707329"/>
+				<textFieldExpression><![CDATA[$F{tipo_pqr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="215" y="16" width="75" height="20" uuid="0c54b6fb-e529-468d-9960-dad503df355c"/>
+				<textFieldExpression><![CDATA[$F{asunto_pqr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="379" y="16" width="98" height="20" uuid="089d4df0-0791-4a1f-a736-0ca9b3f022fb"/>
+				<textFieldExpression><![CDATA[$F{fecha_creacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="303" y="16" width="65" height="20" uuid="79756264-380d-4c56-9a00-3549a7f27e06"/>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="489" y="16" width="83" height="20" uuid="61dc473e-0c9c-43e6-9ef1-ae26fcd860de"/>
+				<textFieldExpression><![CDATA[$F{fecha_limite}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="199" y="7" width="80" height="20" uuid="fbc06651-cca3-4b0e-a848-432b3fcd1263"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="290" y="7" width="40" height="20" uuid="92221abe-435b-4c6f-99b0-8e783bbda3c4"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
